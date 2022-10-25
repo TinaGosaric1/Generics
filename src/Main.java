@@ -25,6 +25,7 @@ public class Main {
 
         footballTeam1.matchResult(footballTeam2, 1,0);
         footballTeam1.matchResult(footballTeam3, 3, 8);
+        footballTeam2.matchResult(footballTeam3, 1, 3);
 
         System.out.println("Rankings");
         System.out.println(footballTeam1.getName() + ": " + footballTeam1.ranking());
@@ -33,5 +34,12 @@ public class Main {
 
         System.out.println(footballTeam1.compareTo(footballTeam2));
         System.out.println(footballTeam2.compareTo(footballTeam3));
+
+        League<Team<FootballPlayer>> footballLeauge = new League<>("AFL");
+        footballLeauge.add(footballTeam1);
+        footballLeauge.add(footballTeam2);
+        footballLeauge.add(footballTeam3);
+
+        footballLeauge.showLeagueTable();
     }
 }
